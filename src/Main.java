@@ -10,6 +10,8 @@ public class Main {
         ladaGranta.changeTiresOfSeason();
         System.out.println("ladaGranta = " + ladaGranta);
 
+
+
 //        Car audiA8 = new Car("Audi", "A8 50 L TDI quattro", 0.0,"Black", 2020, "Germany");
 //        audiA8.printAutomobile();
 

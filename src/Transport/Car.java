@@ -1,8 +1,28 @@
 package Transport;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Car {
+
+    public class Key {
+        private final boolean remoteEngineStart;
+        private final boolean keylessAccess;
+
+        public boolean isRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+        public boolean isKeylessAccess() {
+            return keylessAccess;
+        }
+
+        public Key(boolean remoteEngineStart, boolean keylessAccess) {
+            this.remoteEngineStart = remoteEngineStart;
+            this.keylessAccess = keylessAccess;
+        }
+    }
+
+    private Key carKey;
     private final String brand;
     private final String model;
     private double engineVolume;
@@ -14,13 +34,16 @@ public class Car {
     private String registrationNum;
     private final int numOfSeats;
     private boolean winterTires;
-    Date date = new Date();
 
     private final String DEFAULT_VALUE = "default";
     private final double DEFAULT_ENGINE_VOLUME = 1.5;
     private final String DEFAULT_COLOR = "white";
     private final int DEFAULT_YEAR = 2000;
     private final int DEFAULT_SEATS = 5;
+
+    public Key getCarKey() {
+        return carKey;
+    }
 
     public String getBrand() {
         return brand;
@@ -64,6 +87,10 @@ public class Car {
 
     public boolean isWinterTires() {
         return winterTires;
+    }
+
+    public void setCarKey(Key carKey) {
+        this.carKey = carKey;
     }
 
     public void setEngineVolume(double engineVolume) {
@@ -164,7 +191,7 @@ public class Car {
     }
 
     public void changeTiresOfSeason() {
-       int currentMonth = (date.getMonth())+1;
+       int currentMonth = LocalDate.now().getDayOfMonth();
         if (currentMonth >= 4 && currentMonth <= 10) {
             setWinterTires(true);
         } else {
