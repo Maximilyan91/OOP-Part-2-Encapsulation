@@ -1,5 +1,7 @@
 package Transport;
 
+import java.util.Date;
+
 public class Car {
     private final String brand;
     private final String model;
@@ -17,6 +19,7 @@ public class Car {
     private final double DEFAULT_ENGINE_VOLUME = 1.5;
     private final String DEFAULT_COLOR = "white";
     private final int DEFAULT_YEAR = 2000;
+    private final int DEFAULT_SEATS = 5;
 
     public String getBrand() {
         return brand;
@@ -94,35 +97,9 @@ public class Car {
     }
 
         public void setWinterTires(boolean winterTires) {
-        this.winterTires = winterTires;
+
     }
 
-    public Car(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry) {
-        if (brand == null || brand.isEmpty()) {
-            this.brand = DEFAULT_VALUE;
-        } else {
-            this.brand = brand;
-        }
-        setEngineVolume(engineVolume);
-        setColor(color);
-
-        if (model == null || model.isEmpty()) {
-            this.model = DEFAULT_VALUE;
-        } else {
-            this.model = model;
-        }
-
-        if (productionYear <= 0) {
-            this.productionYear = DEFAULT_YEAR;
-        } else {
-            this.productionYear = productionYear;
-        }
-        if (productionCountry == null || productionCountry.isEmpty()) {
-            this.productionCountry = DEFAULT_VALUE;
-        } else {
-            this.productionCountry = productionCountry;
-        }
-    }
 
     public Car(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, String gearBox, String bodyType, String registrationNum, int numOfSeats, boolean winterTires) {
         if (brand == null || brand.isEmpty()) {
@@ -160,23 +137,12 @@ public class Car {
         setRegistrationNum(registrationNum);
 
         if (numOfSeats <= 0) {
-            this.numOfSeats = 1;
+            this.numOfSeats = DEFAULT_SEATS;
         } else {
             this.numOfSeats = numOfSeats;
         }
 
         setWinterTires(winterTires);
-    }
-
-
-    public void printAutomobile() {
-        System.out.println("Автомобиль - " + brand);
-        System.out.println("Модель - " + model);
-        System.out.println("Страна производства - " + productionCountry);
-        System.out.println("Год производства - " + productionYear);
-        System.out.println("Цвет - " + color);
-        System.out.println("Объем двигателя - " + engineVolume +" литра(ов)");
-
     }
 
     @Override
