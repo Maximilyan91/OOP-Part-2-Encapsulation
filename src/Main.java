@@ -3,7 +3,7 @@ import Transport.Car;
 public class Main {
     public static void main(String[] args) {
 
-        Car ladaGranta = new Car(null, "Granta",0,"Yellow",2015,"Russia");
+        Car ladaGranta = new Car(null, "Granta",0,"Yellow",2015,"Russia", "Automatic", "Седан", "х666хх161", 5,true );
         ladaGranta.printAutomobile();
 
         System.out.println();
@@ -25,5 +25,8 @@ public class Main {
 
         Car hyundaiAvante = new Car("Hyundai","Avante",1.6, "Orange", 2016, "South Korea" );
         hyundaiAvante.printAutomobile();
+
+        ladaGranta.toString();
+
     }
 }
