@@ -14,6 +14,7 @@ public class Car {
     private String registrationNum;
     private final int numOfSeats;
     private boolean winterTires;
+    Date date = new Date();
 
     private final String DEFAULT_VALUE = "default";
     private final double DEFAULT_ENGINE_VOLUME = 1.5;
@@ -96,12 +97,12 @@ public class Car {
         }
     }
 
-        public void setWinterTires(boolean winterTires) {
-
+    public void setWinterTires(boolean winterTires) {
+        this.winterTires = winterTires;
     }
 
-
-    public Car(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, String gearBox, String bodyType, String registrationNum, int numOfSeats, boolean winterTires) {
+    public Car(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry,
+               String gearBox, String bodyType, String registrationNum, int numOfSeats, boolean winterTires) {
         if (brand == null || brand.isEmpty()) {
             this.brand = DEFAULT_VALUE;
         } else {
@@ -160,5 +161,14 @@ public class Car {
                 ", numOfSeats=" + numOfSeats +
                 ", winterTires=" + winterTires +
                 '}';
+    }
+
+    public void changeTiresOfSeason() {
+       int currentMonth = (date.getMonth())+1;
+        if (currentMonth >= 4 && currentMonth <= 10) {
+            setWinterTires(true);
+        } else {
+            setWinterTires(false);
+        }
     }
 }
