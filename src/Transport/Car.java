@@ -1,3 +1,5 @@
+package Transport;
+
 public class Car {
 
     String brand;
@@ -6,6 +8,12 @@ public class Car {
     String color;
     int productionYear;
     String productionCountry;
+    String gearBox;
+    String bodyType;
+    String registrationNum;
+    int numOfSeats;
+    boolean winterTires;
+
 
     public Car(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry) {
         this.brand = brand;
@@ -36,7 +44,7 @@ public class Car {
     }
 
 
-    void printAutomobile() {
+    public void printAutomobile() {
         System.out.println("Автомобиль - " + brand);
         System.out.println("Модель - " + model);
         System.out.println("Страна производства - " + productionCountry);
