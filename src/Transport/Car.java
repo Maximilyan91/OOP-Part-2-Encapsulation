@@ -189,7 +189,6 @@ public class Car {
                 ", winterTires=" + winterTires +
                 '}';
     }
-
     public void changeTiresOfSeason() {
        int currentMonth = LocalDate.now().getDayOfMonth();
         if (currentMonth >= 4 && currentMonth <= 10) {
